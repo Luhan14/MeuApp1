@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>IMC</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+
+<!--Aviso sobre o modo de uso da página/ da calculadora-->
+<ion-card color="primary">
+  <ion-card-content>
+    <p id="aviso">
+      Para realizar o cálculo, digite sua altura em metros, e seu peso em kilos.
+    </p>
+  </ion-card-content>
+</ion-card>
+<!--Criando os Inputs-->
+<ion-list class="ion-padding">
+  <ion-item>
+    <ion-label position="floating">digite sua altura</ion-label>
+    <ion-input type="number" placeholder="1.65" (input)="altura=$event.target.value"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">digite seu peso</ion-label>
+    <ion-input type="number" placeholder="67.450" (input)="peso=$event.target.value"></ion-input>
+  </ion-item>
+</ion-list>
+<ion-button expand="block" (click)="calcular()">Calcular</ion-button>
+
+<!--Informações sobre o IMC dos dados inseridos-->
+<div *ngIf="imc > 0">
+  <ion-card>
+    <ion-card-header>
+      IMC: {{imc}}
+    </ion-card-header>
+    <ion-img src=""></ion-img>
+    <ion-card-content>
+      <p><ion-icon margin="5px" name="body"></ion-icon> Situação: {{condicao}}</p>
+      <br>
+      <p><ion-icon margin="5px" name="information"></ion-icon> IMC saudável deve estar entre 18,5 e 25. {{condicao}}</p>
+      <p><ion-icon margin="5px" name="navigate"></ion-icon> Para mais informações visite a página sobre ou acesse o site da OMS. {{condicao}}</p>
+
+    </ion-card-content>
+  </ion-card>
+</div>
+
+</ion-content>

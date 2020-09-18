@@ -12,38 +12,44 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
+
     {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
+      title: 'Card',
+      url: 'card',
+      icon: 'journal'
     },
+
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
+      title: 'Buttons',
+      url: 'buttons',
+      icon: 'journal'
     },
+
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Inputs',
+      url: 'inputs',//rotas ou caminho para uma página
+      icon: 'file-tray'
     },
+
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Navegação',//navegar entre páginas...
+      url: 'pagina1',
+      icon: 'newspaper'
     },
+
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
+      title: 'Lista',//navegar entre páginas...
+      url: 'list',
+      icon: 'newspaper'
     },
+
     {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'IMC',//navegar entre páginas...
+      url: 'imc',
+      icon: 'calculator'
     }
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+  public labels = ['Alunos', 'TI88'];
 
   constructor(
     private platform: Platform,
